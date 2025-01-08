@@ -1,0 +1,170 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "enabled_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "psychological_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "bias_mitigation_responses": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "human_intuition_responses": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "neural_network_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "quantum_computing_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "resilient_kindness_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "mathematical_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "philosophical_perspectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "copilot_responses": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "luis": {
+            "type": "object",
+            "properties": {
+                "endpoint": { "type": "string" },
+                "apiVersion": { "type": "string" },
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "type": { "type": "string" },
+                "location": { "type": "string" },
+                "identity": {
+                    "type": "object",
+                    "properties": {
+                        "principalId": { "type": "string" },
+                        "tenantId": { "type": "string" },
+                        "type": { "type": "string" }
+                    },
+                    "required": ["principalId", "tenantId", "type"]
+                },
+                "properties": {
+                    "type": "object",
+                    "properties": {
+                        "endpoint": { "type": "string" },
+                        "provisioningState": { "type": "string" },
+                        "internalId": { "type": "string" },
+                        "dateCreated": { "type": "string", "format": "date-time" },
+                        "callRateLimit": {
+                            "type": "object",
+                            "properties": {
+                                "rules": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "key": { "type": "string" },
+                                            "renewalPeriod": { "type": "integer" },
+                                            "count": { "type": "integer" },
+                                            "matchPatterns": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "path": { "type": "string" },
+                                                        "method": { "type": "string" }
+                                                    },
+                                                    "required": ["path", "method"]
+                                                }
+                                            }
+                                        },
+                                        "required": ["key", "renewalPeriod", "count", "matchPatterns"]
+                                    }
+                                }
+                            },
+                            "required": ["rules"]
+                        },
+                        "isMigrated": { "type": "boolean" },
+                        "customSubDomainName": { "type": "string" },
+                        "privateEndpointConnections": {
+                            "type": "array",
+                            "items": { "type": "object" }
+                        },
+                        "publicNetworkAccess": { "type": "string" },
+                        "capabilities": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": { "type": "string" }
+                                },
+                                "required": ["name"]
+                            }
+                        },
+                        "endpoints": {
+                            "type": "object",
+                            "properties": {
+                                "LUIS.Authoring": { "type": "string" },
+                                "LUIS": { "type": "string" },
+                                "Container": { "type": "string" }
+                            },
+                            "required": ["LUIS.Authoring", "LUIS", "Container"]
+                        },
+                        "armFeatures": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                        }
+                    },
+                    "required": ["endpoint", "provisioningState", "internalId", "dateCreated", "callRateLimit", "isMigrated", "customSubDomainName", "privateEndpointConnections", "publicNetworkAccess", "capabilities", "endpoints", "armFeatures"]
+                }
+            },
+            "required": ["endpoint", "apiVersion", "id", "name", "type", "location", "identity", "properties"]
+        },
+        "ethical_considerations": { "type": "string" },
+        "logging_enabled": { "type": "boolean" },
+        "log_level": { "type": "string" },
+        "enable_response_saving": { "type": "boolean" },
+        "response_save_path": { "type": "string" },
+        "backup_responses": {
+            "type": "object",
+            "properties": {
+                "enabled": { "type": "boolean" },
+                "backup_path": { "type": "string" }
+            },
+            "required": ["enabled", "backup_path"]
+        }
+    },
+    "required": ["enabled_perspectives", "psychological_perspectives", "bias_mitigation_responses", "human_intuition_responses", "neural_network_perspectives", "quantum_computing_perspectives", "resilient_kindness_perspectives", "mathematical_perspectives", "philosophical_perspectives", "copilot_responses", "luis", "ethical_considerations", "logging_enabled", "log_level", "enable_response_saving", "response_save_path", "backup_responses"]
+}

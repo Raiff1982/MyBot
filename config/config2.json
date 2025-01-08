@@ -1,0 +1,41 @@
+import os
+import logging
+from dotenv import load_dotenv
+import json
+import jsonschema
+from jsonschema import validate
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Validate environment variables
+azure_openai_api_key = os.getenv('AZURE_OPENAI_API_KEY')
+azure_openai_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
+luis_endpoint = os.getenv('LUIS_ENDPOINT')
+luis_api_version = os.getenv('LUIS_API_VERSION')
+luis_api_key = os.getenv('LUIS_API_KEY')
+
+if not azure_openai_api_key or not azure_openai_endpoint:
+    logging.error("Azure OpenAI API key or endpoint not found in environment variables.")
+if not luis_endpoint or not luis_api_version or not luis_api_key:
+    logging.error("LUIS API key or endpoint not found in environment variables.")
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def load_and_validate_config(config_path: str, schema_path: str) -> dict:
+    """Load and validate the JSON configuration file against the schema."""
+    with open(schema_path, 'r') as schema_file:
+        schema = json.load(schema_file)
+
+    with open(config_path, 'r') as config_file:
+        config = json.load(config_file)
+
+    try:
+        validate(instance=config, schema=schema)
+        logging.info("JSON configuration is valid.")
+    except jsonschema.exceptions.ValidationError as err:
+        logging.error(f"JSON configuration is invalid: {err.message}")
+        raise
+
+    return config

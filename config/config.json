@@ -1,0 +1,124 @@
+{
+    "enabled_perspectives": [
+        "newton",
+        "davinci",
+        "human_intuition",
+        "neural_network",
+        "quantum_computing",
+        "resilient_kindness",
+        "mathematical",
+        "philosophical",
+        "copilot",
+        "bias_mitigation",
+        "psychological"
+    ],
+    "psychological_perspectives": [
+        "Consider the cognitive biases that might affect '{question}'.",
+        "Reflect on the emotional impact of '{question}'.",
+        "Think about the psychological principles that apply to '{question}'."
+    ],
+    "bias_mitigation_responses": [
+        "Consider pre-processing methods to reduce bias in the training data.",
+        "Apply in-processing methods to mitigate bias during model training.",
+        "Use post-processing methods to adjust the model's outputs for fairness.",
+        "Evaluate the model using fairness metrics like demographic parity and equal opportunity.",
+        "Ensure compliance with legal frameworks such as GDPR and non-discrimination laws."
+    ],
+    "human_intuition_responses": [
+        "How does this question resonate with you personally?",
+        "What personal experiences relate to this topic?",
+        "How do you feel internally about this matter?"
+    ],
+    "neural_network_perspectives": [
+        "Process '{question}' using convolutional neural networks to identify patterns.",
+        "Apply recurrent neural networks to understand the sequence in '{question}'.",
+        "Use transformer models to grasp the context of '{question}'."
+    ],
+    "quantum_computing_perspectives": [
+        "Leverage quantum tunneling to explore solutions for '{question}'.",
+        "Apply quantum Fourier transform to analyze '{question}'.",
+        "Utilize quantum annealing to optimize answers for '{question}'."
+    ],
+    "resilient_kindness_perspectives": [
+        "Choosing kindness can lead to unexpected strengths.",
+        "Acts of compassion can transform challenging situations.",
+        "Kindness fosters resilience in the face of adversity."
+    ],
+    "mathematical_perspectives": [
+        "Employ linear algebra to dissect '{question}'.",
+        "Use probability theory to assess uncertainties in '{question}'.",
+        "Apply discrete mathematics to break down '{question}'."
+    ],
+    "philosophical_perspectives": [
+        "Examine '{question}' through the lens of nihilism.",
+        "Consider '{question}' from a deontological perspective.",
+        "Reflect on '{question}' using the principles of pragmatism."
+    ],
+    "copilot_responses": [
+        "Let's outline the main components of '{question}' to address it effectively.",
+        "Collaboratively brainstorm potential solutions for '{question}'.",
+        "Systematically analyze '{question}' to identify key factors."
+    ],
+    "luis": {
+        "endpoint": "https://pilouis.cognitiveservices.azure.com/",
+        "apiVersion": "2024-10-01",
+        "id": "/subscriptions/5dd32870-bdc6-40cd-981a-f299e93a6439/resourceGroups/Justforpi/providers/Microsoft.CognitiveServices/accounts/pilouis",
+        "name": "pilouis",
+        "type": "microsoft.cognitiveservices/accounts",
+        "location": "westus",
+        "identity": {
+            "principalId": "9a4a3675-9f5f-43a3-90a1-0640b3f753cb",
+            "tenantId": "05b815de-344b-4a3f-8387-52ca67249c55",
+            "type": "SystemAssigned"
+        },
+        "properties": {
+            "endpoint": "https://pilouis.cognitiveservices.azure.com/",
+            "provisioningState": "Succeeded",
+            "internalId": "6a7ae86489d64f168c3fa6b4866b05cd",
+            "dateCreated": "2024-12-23T22:03:09.951Z",
+            "callRateLimit": {
+                "rules": [
+                    {
+                        "key": "default",
+                        "renewalPeriod": 1,
+                        "count": 5,
+                        "matchPatterns": [
+                            {
+                                "path": "*",
+                                "method": "*"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "isMigrated": false,
+            "customSubDomainName": "pilouis",
+            "privateEndpointConnections": [],
+            "publicNetworkAccess": "Enabled",
+            "capabilities": [
+                {
+                    "name": "VirtualNetworks"
+                }
+            ],
+            "endpoints": {
+                "LUIS.Authoring": "https://pilouis.cognitiveservices.azure.com/",
+                "LUIS": "https://pilouis.cognitiveservices.azure.com/",
+                "Container": "https://pilouis.cognitiveservices.azure.com/"
+            },
+            "armFeatures": [
+                "Microsoft.CognitiveServices/LegalTerms.TextAnalytics.TAForPIIRAITermsAccepted",
+                "Microsoft.CognitiveServices/LegalTerms.TextAnalytics.TAForHealthRAITermsAccepted",
+                "Microsoft.CognitiveServices/LegalTerms.ComputerVision.SpatialAnaysisRAITermsAccepted"
+            ]
+        }
+    },
+    "ethical_considerations": "Always act with transparency, fairness, and respect for privacy.",
+    "logging_enabled": true,
+    "log_level": "DEBUG",
+    "enable_response_saving": true,
+    "response_save_path": "responses.txt",
+    "backup_responses": {
+        "enabled": true,
+        "backup_path": "backup_responses.txt"
+    }
+}
